@@ -30,7 +30,16 @@ export default class PartialTable extends Component {
     } = this.props.data;
 
     return (
-      <div className="container">
+      <div className="data-table">
+        <Table
+          className="table table-bordered"
+          dataArray={page}
+          columns={columns}
+          keys={keys}
+          buildRowOptions={buildRowOptions}
+          sortBy={sortBy}
+          onSort={onSort}
+        />
         <div className="row">
           <div className="col-xs-4">
             <div>
@@ -66,15 +75,6 @@ export default class PartialTable extends Component {
             />
           </div>
         </div>
-        <Table
-          className="table table-bordered"
-          dataArray={page}
-          columns={columns}
-          keys={keys}
-          buildRowOptions={buildRowOptions}
-          sortBy={sortBy}
-          onSort={onSort}
-        />
       </div>
     );
   }
